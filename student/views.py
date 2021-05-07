@@ -7,7 +7,7 @@ def Update_products(request, *args, **kwargs):
     if request.method=='POST':
         form=StudnetForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            
             Student.objects.create(**form.cleaned_data)
         form = StudnetForm()
     context={
